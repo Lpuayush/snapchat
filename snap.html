@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snapchat UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Welcome Screen -->
+  <div id="welcome-screen" class="screen active">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/ad/Snapchat_logo.svg" alt="Snapchat Logo" class="logo">
+
+    <button class="google-btn">
+      <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo">
+      Continue with Google
+    </button>
+
+    <button class="signup-btn">Sign Up</button>
+
+    <p class="login-text">
+      Already have an account? 
+      <span class="login-link" onclick="showLogin()">Log in</span>
+    </p>
+  </div>
+
+  <!-- Login Screen -->
+  <div id="login-screen" class="screen">
+    <button class="back-arrow" onclick="showWelcome()">←</button>
+    <h2 class="login-title">Log In</h2>
+
+    <label class="input-label">USERNAME OR EMAIL</label>
+    <input type="text" class="input-field">
+
+    <a href="#" class="link">Use phone number instead</a>
+
+    <label class="input-label">PASSWORD</label>
+    <div class="password-wrapper">
+      <input type="password" class="input-field">
+      <span class="eye-icon">👁️</span>
+    </div>
+
+    <div class="checkbox-wrapper">
+      <input type="checkbox" id="save-info">
+      <label for="save-info">Save Login Info on your device</label>
+    </div>
+
+    <a href="#" class="link">Forgot your password?</a>
+
+    <button class="login-btn" disabled>Log In</button>
+  </div>
+
+  <script>
+    function showLogin() {
+      document.getElementById("welcome-screen").classList.remove("active");
+      document.getElementById("login-screen").classList.add("active");
+    }
+    function showWelcome() {
+      document.getElementById("login-screen").classList.remove("active");
+      document.getElementById("welcome-screen").classList.add("active");
+    }
+  </script>
+</body>
+</html>
